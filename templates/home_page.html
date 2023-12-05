@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('https://cdn.wallpapersafari.com/34/34/z2jlEn.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .box {
+      text-align: center;
+      background-color: rgba(233, 226, 226, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .box h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .box p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ff2b58;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .button:hover {
+      background-color: #ff0a47;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Welcome <strong>{{ request.user.username }}</strong></h1>
+    <p>You are logged in and ready to explore.</p>
+    <a href="{% url 'logout_page' %}" class="button">Log out</a>
+  </div>
+</body>
+</html>
+

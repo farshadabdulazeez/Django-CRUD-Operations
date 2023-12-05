@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Signup Page</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+      *:before,
+      *:after{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        margin: 0;
+        padding: 0;
+        background-image: url('https://cdn.britannica.com/74/114874-050-6E04C88C/North-Face-Mount-Everest-Tibet-Autonomous-Region.jpg');
+        background-size: cover;
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+      }
+      form{
+        height: 600px;
+        width: 450px;
+        background-color: rgba(255,255,255,0.13);
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        padding: 30px 35px; /* Adjust the padding here */
+      }
+      form *{
+        font-family: 'Poppins',sans-serif;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+      }
+      form h3{
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label{
+        display: block;
+        margin-top: 15px; /* Adjust the margin here */
+        font-size: 16px;
+        font-weight: 500;
+      }
+      input{
+        display: block;
+        height: 40px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 5px; /* Adjust the margin here */
+        font-size: 14px;
+        font-weight: 300;
+      }
+      ::placeholder{
+        color: #e5e5e5;
+      }
+      button{
+        margin-top: 20px;
+        width: 100%;
+        background-color: #ffffff;
+        color: #080710;
+        padding: 12px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .account-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .login-link {
+        color: #1d5276;
+        text-decoration: none;
+        transition: color 0.3s;
+        display: block;
+        margin-top: 10px;
+      }
+      .login-link:hover {
+        color: #ff512f;
+        text-decoration: underline;
+      }
+      .btn:hover{
+        background-color: #1d5276;
+        color: #e5e5e5;
+      }
+    </style>
+</head>
+<body>
+    
+    <form action="" method="post">
+      {% csrf_token %} 
+        <h3>CREATE A ACCOUNT</h3>
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter your Email" name="email" id="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter your Password" id="password" name="password" required>
+
+        <label for="password2">Confirm Password</label>
+        <input type="password" placeholder="Re-enter Password" id="password2" name="password2" required>
+        <button type="submit" class="btn">Signup</button>
+        
+        <div class="account-link"> <!-- Wrap the link in a div and give it a class -->
+          Already have an account? <a href="{% url 'login_page' %}" class="login-link">Login</a>
+        </div>
+        
+    </form>
+</body>
+</html>
